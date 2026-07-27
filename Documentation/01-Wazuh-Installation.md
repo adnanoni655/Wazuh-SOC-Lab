@@ -14,13 +14,13 @@ This document explains how I installed and configured the Wazuh Security Informa
 
 
 
-\- Wazuh Version: 4.12.0
+\- \*\*Wazuh Version:\*\* 4.12.0
 
-\- Operating System: Ubuntu Server 22.04 LTS
+\- \*\*Operating System:\*\* Ubuntu Server 22.04 LTS
 
-\- Virtualization Platform: VirtualBox
+\- \*\*Virtualization Platform:\*\* VirtualBox
 
-\- Endpoint: Windows 10 Home
+\- \*\*Endpoint:\*\* Windows 10 Home
 
 
 
