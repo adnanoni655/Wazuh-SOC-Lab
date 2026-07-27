@@ -54,5 +54,5 @@ The Wazuh dashboard was successfully deployed and provides centralized visibilit
 
 
 
-!\[Wazuh Dashboard](../Screenshots/Wazuh-Overview.png)
+!\[Wazuh Dashboard](/Screenshots/Wazuh-Overview.png)
 
