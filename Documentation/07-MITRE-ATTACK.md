@@ -1,102 +1,46 @@
-\# MITRE ATT\&CK Investigation
+# MITRE ATT&CK Investigation
 
+## Overview
 
+This document demonstrates how Wazuh maps security events to the MITRE ATT&CK framework, helping analysts understand attacker tactics and techniques. During this lab, PowerShell execution and authentication events were automatically associated with relevant MITRE ATT&CK techniques, providing valuable context for threat investigation.
 
-\## Overview
+## Lab Environment
 
+- **Manager:** Wazuh 4.12.0
+- **Operating System:** Ubuntu Server 22.04 LTS
+- **Endpoint:** Windows 10 Home
+- **Virtualization Platform:** Oracle VirtualBox
 
+## Objectives
 
-This document explains how Wazuh mapped detected security events to the MITRE ATT\&CK framework, allowing attack techniques to be identified and analyzed.
+- Analyze security alerts using the MITRE ATT&CK framework
+- Identify attacker tactics and techniques
+- Correlate alerts with endpoint activity
+- Improve threat investigation and incident response
 
+## Steps Performed
 
+1. Generated security events on the Windows endpoint.
+2. Collected logs using the Wazuh Agent.
+3. Reviewed alerts in the Wazuh Dashboard.
+4. Examined the MITRE ATT&CK mappings associated with each alert.
+5. Investigated the related tactics and techniques.
 
-\## Lab Environment
+## Investigation Results
 
+Wazuh automatically enriched security alerts with MITRE ATT&CK information, making it easier to understand the nature of detected activity.
 
+Examples observed during the lab include:
 
-\- Wazuh Manager: Ubuntu Server 22.04
+| Technique ID | Technique | Tactic |
+|--------------|-----------|--------|
+| T1059.001 | PowerShell | Execution |
+| T1110 | Brute Force | Credential Access |
 
-\- Wazuh Version: 4.12.0
+By mapping alerts to the MITRE ATT&CK framework, analysts can better prioritize investigations, understand attacker behavior, and respond more effectively to potential threats.
 
-\- Endpoint: Windows 10 Home
+## MITRE ATT&CK Dashboard
 
-\- Virtualization Platform: VirtualBox
+The Wazuh dashboard provides built-in MITRE ATT&CK mappings, allowing analysts to quickly correlate alerts with known adversary techniques.
 
-
-
-\## Objectives
-
-
-
-\- Investigate security alerts
-
-\- Identify attack techniques
-
-\- Analyze events using the MITRE ATT\&CK framework
-
-\- Understand attacker behavior
-
-
-
-\## Investigation
-
-
-
-Several security events generated during the lab were automatically mapped to the MITRE ATT\&CK framework.
-
-
-
-The MITRE ATT\&CK dashboard provided insight into the tactics and techniques used during each event.
-
-
-
-\## Observed Techniques
-
-
-
-\- T1059.001 – PowerShell
-
-\- T1112 – Modify Registry
-
-\- T1110 – Brute Force
-
-
-
-\## Benefits of MITRE ATT\&CK Mapping
-
-
-
-\- Faster threat investigation
-
-\- Improved understanding of attacker behavior
-
-\- Standardized security analysis
-
-\- Better incident response
-
-
-
-\## Skills Demonstrated
-
-
-
-\- Threat Hunting
-
-\- Security Event Investigation
-
-\- MITRE ATT\&CK Analysis
-
-\- Endpoint Monitoring
-
-\- Wazuh SIEM
-
-\- Incident Analysis
-
-
-
-\## Result
-
-
-
-Wazuh successfully mapped security events to the MITRE ATT\&CK framework, allowing attack techniques to be identified and investigated efficiently. This demonstrates the use of industry-standard threat intelligence during security operations.
-
+![MITRE ATT&CK Dashboard](../Screenshots/mitre-attack-dashboard.png)

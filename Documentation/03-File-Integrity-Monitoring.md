@@ -1,114 +1,37 @@
-\# File Integrity Monitoring (FIM)
+# File Integrity Monitoring
 
+## Overview
 
+This document explains how I configured File Integrity Monitoring (FIM) in Wazuh to detect changes to files on the monitored Windows endpoint. FIM is an important security capability that helps identify unauthorized file creation, modification, and deletion.
 
-\## Overview
+## Lab Environment
 
+- **Manager:** Wazuh 4.12.0
+- **Operating System:** Ubuntu Server 22.04 LTS
+- **Endpoint:** Windows 10 Home
+- **Virtualization Platform:** VirtualBox
 
+## Objectives
 
-This document explains how File Integrity Monitoring (FIM) was configured in Wazuh to detect unauthorized changes made to files on the monitored Windows endpoint.
+- Configure File Integrity Monitoring
+- Monitor critical files for changes
+- Generate file modification events
+- Verify alerts in the Wazuh Dashboard
 
+## Steps Performed
 
+1. Enabled File Integrity Monitoring on the Windows endpoint.
+2. Selected files and directories to monitor.
+3. Modified monitored files to generate security events.
+4. Allowed the Wazuh Agent to send events to the Manager.
+5. Verified the alerts in the Wazuh Dashboard.
 
-\## Lab Environment
+## Result
 
+Wazuh successfully detected file modifications on the monitored endpoint. Alerts were generated whenever monitored files changed, demonstrating that File Integrity Monitoring was functioning correctly.
 
+## File Integrity Monitoring Dashboard
 
-\- Wazuh Manager: Ubuntu Server 22.04
+The Wazuh dashboard displays file modification events, allowing security analysts to quickly identify unauthorized or suspicious changes.
 
-\- Wazuh Version: 4.12.0
-
-\- Endpoint: Windows 10 Home
-
-\- Virtualization Platform: VirtualBox
-
-
-
-\## Objectives
-
-
-
-\- Enable File Integrity Monitoring
-
-\- Monitor important files on the Windows endpoint
-
-\- Detect file creation, modification, and deletion
-
-\- Generate security alerts in the Wazuh Dashboard
-
-
-
-\## Configuration
-
-
-
-The Wazuh agent was configured to monitor selected directories on the Windows endpoint.
-
-
-
-The Wazuh Manager continuously compared file metadata and generated alerts whenever changes were detected.
-
-
-
-\## Testing
-
-
-
-The following actions were performed:
-
-
-
-1\. Created a test file.
-
-2\. Modified the contents of the file.
-
-3\. Deleted the file.
-
-4\. Verified that Wazuh detected each action.
-
-
-
-\## Detection Results
-
-
-
-Wazuh successfully detected:
-
-
-
-\- File Creation
-
-\- File Modification
-
-\- File Deletion
-
-
-
-The alerts appeared in the Wazuh Dashboard, confirming that File Integrity Monitoring was functioning correctly.
-
-
-
-\## Skills Demonstrated
-
-
-
-\- Endpoint Monitoring
-
-\- File Integrity Monitoring (FIM)
-
-\- Security Event Analysis
-
-\- Log Investigation
-
-\- Threat Detection
-
-\- Wazuh SIEM
-
-
-
-\## Result
-
-
-
-File Integrity Monitoring was successfully configured and validated. Wazuh generated alerts whenever monitored files changed, demonstrating an important capability for detecting unauthorized modifications on enterprise systems.
-
+![File Integrity Monitoring](../Screenshots/file-integrity-monitoring.png)

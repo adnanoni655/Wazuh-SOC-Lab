@@ -1,78 +1,37 @@
-\# Windows Agent Enrollment
+# Windows Agent Enrollment
 
+## Overview
 
+This document explains how I enrolled a Windows 10 Home endpoint into my Wazuh Security Operations Center (SOC) lab. After installing the Wazuh agent, the endpoint began sending security events to the Wazuh Manager for centralized monitoring and analysis.
 
-\## Overview
+## Lab Environment
 
+- **Manager:** Wazuh 4.12.0
+- **Operating System:** Ubuntu Server 22.04 LTS
+- **Endpoint:** Windows 10 Home
+- **Virtualization Platform:** VirtualBox
 
+## Objectives
 
-This document explains how the Windows 10 endpoint was enrolled into the Wazuh Security Information and Event Management (SIEM) platform for centralized monitoring.
+- Install the Wazuh Agent on Windows
+- Connect the endpoint to the Wazuh Manager
+- Verify successful communication
+- Confirm the endpoint appears in the Wazuh Dashboard
 
+## Steps Performed
 
+1. Downloaded the Windows Wazuh Agent.
+2. Installed the agent on the Windows 10 endpoint.
+3. Configured the agent to communicate with the Wazuh Manager.
+4. Started the Wazuh Agent service.
+5. Verified successful registration in the Wazuh Dashboard.
 
-\## Lab Environment
+## Result
 
+The Windows endpoint successfully connected to the Wazuh Manager and began sending security events. The endpoint appeared as an active agent in the dashboard, enabling centralized monitoring and future security detection capabilities.
 
+## Registered Agent
 
-\- Wazuh Manager: Ubuntu Server 22.04
+The dashboard confirms that the Windows endpoint has successfully enrolled and is actively communicating with the Wazuh Manager.
 
-\- Wazuh Version: 4.12.0
-
-\- Endpoint: Windows 10 Home
-
-\- Connection: VirtualBox Internal Network
-
-
-
-\## Objectives
-
-
-
-\- Install the Wazuh Agent
-
-\- Connect the endpoint to the Wazuh Manager
-
-\- Verify successful communication
-
-\- Begin centralized log collection
-
-
-
-\## Installation Process
-
-
-
-1\. Downloaded the Wazuh Windows Agent.
-
-2\. Installed the agent on the Windows endpoint.
-
-3\. Configured the manager IP address.
-
-4\. Started the Wazuh Agent service.
-
-5\. Verified that the endpoint appeared in the Wazuh Dashboard.
-
-
-
-\## Result
-
-
-
-The Windows endpoint successfully connected to the Wazuh Manager. Once enrolled, the system began sending security events, allowing centralized monitoring and enabling later exercises such as File Integrity Monitoring, Windows Defender monitoring, PowerShell monitoring, brute-force detection, vulnerability detection, and MITRE ATT\&CK mapping.
-
-
-
-\## Skills Demonstrated
-
-
-
-\- SIEM Deployment
-
-\- Endpoint Management
-
-\- Windows Administration
-
-\- Log Collection
-
-\- Security Monitoring
-
+![Registered Agent](../Screenshots/Agents.png)
