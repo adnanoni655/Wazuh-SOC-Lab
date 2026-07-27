@@ -1,104 +1,45 @@
-\# Windows Defender Monitoring
+# Windows Defender Monitoring
 
+## Overview
 
+This document explains how I integrated Microsoft Defender Antivirus with Wazuh to monitor endpoint protection events. Wazuh collected Windows Defender Operational logs and generated alerts whenever suspicious or potentially unwanted software was detected.
 
-\## Overview
+## Lab Environment
 
+- **Manager:** Wazuh 4.12.0
+- **Operating System:** Ubuntu Server 22.04 LTS
+- **Endpoint:** Windows 10 Home
+- **Virtualization Platform:** Oracle VirtualBox
 
+## Objectives
 
-This document explains how Microsoft Defender Antivirus events were collected and monitored by Wazuh to detect malware-related activity on the Windows endpoint.
+- Monitor Microsoft Defender events
+- Collect Windows Defender Operational logs
+- Detect malware and potentially unwanted software
+- Verify alerts in the Wazuh Dashboard
 
+## Steps Performed
 
+1. Verified that Microsoft Defender Real-Time Protection was enabled.
+2. Configured the Wazuh Agent to monitor the Windows Defender Operational event log.
+3. Generated a Microsoft Defender detection event for testing.
+4. Allowed the Wazuh Agent to forward the event to the Wazuh Manager.
+5. Verified that the alert appeared in the Wazuh Dashboard.
 
-\## Lab Environment
+## Detection Results
 
+Wazuh successfully detected Microsoft Defender events and generated security alerts.
 
+Example detection:
 
-\- Wazuh Manager: Ubuntu Server 22.04
+- **Rule ID:** 62123
+- **Rule Level:** 12
+- **Description:** Windows Defender detected potentially unwanted software.
 
-\- Wazuh Version: 4.12.0
+These alerts provide centralized visibility into endpoint protection events and allow analysts to investigate security incidents quickly.
 
-\- Endpoint: Windows 10 Home
+## Windows Defender Detection
 
-\- Virtualization Platform: VirtualBox
+The Wazuh dashboard displays Microsoft Defender alerts, helping security analysts identify malware-related activity and endpoint protection events.
 
-
-
-\## Objectives
-
-
-
-\- Monitor Microsoft Defender events
-
-\- Collect Windows Defender Operational logs
-
-\- Detect malware-related activity
-
-\- Generate security alerts in Wazuh
-
-
-
-\## Configuration
-
-
-
-The Wazuh Agent was configured to monitor the Microsoft-Windows-Windows Defender/Operational event log.
-
-
-
-Microsoft Defender Real-Time Protection remained enabled throughout testing.
-
-
-
-\## Testing
-
-
-
-A test detection event was generated to verify that Windows Defender logs were forwarded to Wazuh.
-
-
-
-The Wazuh Dashboard successfully received and displayed the generated security event.
-
-
-
-\## Detection Results
-
-
-
-Wazuh successfully detected:
-
-
-
-\- Microsoft Defender security events
-
-\- Malware detection alerts
-
-\- Antivirus operational logs
-
-\- Endpoint protection events
-
-
-
-\## Skills Demonstrated
-
-
-
-\- Endpoint Security Monitoring
-
-\- Microsoft Defender Integration
-
-\- Windows Event Log Analysis
-
-\- Security Alert Investigation
-
-\- Wazuh SIEM
-
-
-
-\## Result
-
-
-
-Windows Defender monitoring was successfully configured and validated. Wazuh collected Microsoft Defender security events in real time, providing centralized visibility into endpoint protection activity.
-
+![Windows Defender Detection](../Screenshots/windows-defender-detection.png)
